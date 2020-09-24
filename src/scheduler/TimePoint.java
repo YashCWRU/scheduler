@@ -1,13 +1,7 @@
 package scheduler;
 
-import javafx.scene.web.WebEngine;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
-
-import java.sql.Time;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class TimePoint {
@@ -24,7 +18,7 @@ public class TimePoint {
 
 
     TimePoint(Activity activity, Side side){
-        dependencies = new HashSet<Dependency>();
+        dependencies = new HashSet<>();
         frozen = false; //Sets frozen state to false by default
         this.activity = activity;
         this.side = side;

@@ -1,10 +1,11 @@
 package scheduler;
 
-import java.sql.Time;
-import java.util.*;
+
+import java.util.EnumMap;
+import java.util.Objects;
+import java.util.Set;
 
 import static scheduler.SchedulerException.Error.INVALID_DEPENDENCY;
-import static scheduler.SchedulerException.Error.POINT_FROZEN;
 
 public final class Activity {
     private final ActivityGroup activities;
@@ -17,7 +18,7 @@ public final class Activity {
         this.activities = activities;
         this.description = description;
         this.duration = duration;
-        this.timePointEnumMapMap = new EnumMap<TimePoint.Side, TimePoint>(TimePoint.Side.class);
+        this.timePointEnumMapMap = new EnumMap<>(TimePoint.Side.class);
         TimePoint startPoint = new TimePoint(this, TimePoint.Side.BEGIN);//start timepoint
         TimePoint endPoint = new TimePoint(this, TimePoint.Side.END); //end timepoint
         //adding timepoints to enum map

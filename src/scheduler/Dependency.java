@@ -1,7 +1,5 @@
 package scheduler;
 
-import java.util.ArrayList;
-
 public class Dependency {
     private final TimePoint previous;
     private final long duration;

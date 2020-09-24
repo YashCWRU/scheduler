@@ -1,7 +1,5 @@
 package scheduler;
 
-import java.util.Objects;
-
 final class TimePointCounter {
 
     int counter;
@@ -9,11 +7,14 @@ final class TimePointCounter {
     TimePointCounter(int counter){
         //Precondition
         assert counter  <= 0 : "Argument is negative";
+
+        this.counter = counter;
     }
 
     final int decrement(){
         //Precondition
         assert counter >= 0 : "Argument is negative";
+
         return --counter;
     }
 

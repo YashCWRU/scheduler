@@ -21,6 +21,10 @@ public final class ActivityGroup {
         }
     }
 
+    public final List<TimePoint> sort(){
+        return TimePointSorter.sort(this.timePoints);
+    }
+
     @Override
     public String toString(){
         StringBuilder output = new StringBuilder();
